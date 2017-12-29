@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Angular Library-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Import materialize.css-->
+     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+     <!--google font api-->
+     <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+          <style>
+          body{
+            font-family: 'Tangerine', serif;
+        font-size: 26px;
+          }
+          </style>
+
+
+     <!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+     <link href="css/main.css" rel="stylesheet">
+
+
+</head>
+<body ng-app="myApp" ng-controller="MainController">
+  <p id='para'> </p>
+  <script> document.getElementById('para').innerHTML='hey'</script>
+  <h1> My Responsive Images </h1>
+  <div ng-controller="UploadController">
+    <form>
+      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+    </form>
+    <img id="myImage" class="image" ng-src="{{imageSrc}}" ng-controller="BorderController">
+
+    <!-- <script>
+      var colorThief = new ColorThief();
+      var loc = "{{imageSrc}}";
+      colorThief.getColor(document.getElementById('myImage'));
+      console.log("color thief");
+      document.getElementById('para').innerHTML="color Thief";
+    </script> -->
+  </div>
+  <div>
+    <!-- <img ng-src="{{image}}" class="image"> -->
+
+
+  </div>
+  <script src="js/myApp.js"> </script>
+  <script src="js/controllers/MainController.js"> </script>
+  <script src="js/controllers/UploadController.js">
+  </script>
+  <script src="js/directives/NgFileSelectDirective.js">
+  </script>
+  <script src="js/fromExternalSources/ColorThief.js"> </script>
+  <script src="js/controllers/BorderController.js"> </script>
+  <!-- <script src="js/fromExternalSources/ColorThief.js">
+  </script> -->
+</body>
+</html>
