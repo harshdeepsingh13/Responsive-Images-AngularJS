@@ -3,6 +3,15 @@
 <head>
   <!--Angular Library-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="js/fromExternalSources/ColorThief.js"></script>
+<script src="js/myApp.js"> </script>
+<script src="js/controllers/MainController.js"> </script>
+<script src="js/controllers/UploadController.js">
+</script>
+<script src="js/directives/NgFileSelectDirective.js">
+</script>
+
+<script src="js/controllers/BorderController.js"> </script>
 
 <!--Import Google Icon Font-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,15 +36,29 @@
 
 
 </head>
-<body ng-app="myApp" ng-controller="MainController">
+<body ng-app="myApp" ng-controller="MainController" id = "myBody" style="background:#0a9eb5">
   <p id='para'> </p>
-  <script> document.getElementById('para').innerHTML='hey'</script>
+  <!-- <script> document.getElementById('para').innerHTML='hey';</script> -->
   <h1> My Responsive Images </h1>
   <div ng-controller="UploadController">
     <form>
-      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc" id="uploadFile">
     </form>
-    <img id="myImage" class="image" ng-src="{{imageSrc}}" ng-controller="BorderController">
+    <!-- <script src="js/fromExternalSources/ColorThief.js"> </script> -->
+    <img id="myImage" ng-src="{{imageSrc}}" class="image" >
+
+    <script>
+    console.log("hey");
+    document.getElementById('uploadFile').onclick = function(){
+      document.getElementById("loading").style.display = "block"
+      setTimeout(function(){
+        document.getElementById("loading").style.display = "none"
+      },7000);
+    };
+    document.getElementById('uploadFile').onchange=getDominantColor;
+
+    </script>
+
 
     <!-- <script>
       var colorThief = new ColorThief();
@@ -45,19 +68,10 @@
       document.getElementById('para').innerHTML="color Thief";
     </script> -->
   </div>
-  <div>
-    <!-- <img ng-src="{{image}}" class="image"> -->
-
+  <div id="loading" class="loader">
 
   </div>
-  <script src="js/myApp.js"> </script>
-  <script src="js/controllers/MainController.js"> </script>
-  <script src="js/controllers/UploadController.js">
-  </script>
-  <script src="js/directives/NgFileSelectDirective.js">
-  </script>
-  <script src="js/fromExternalSources/ColorThief.js"> </script>
-  <script src="js/controllers/BorderController.js"> </script>
+
   <!-- <script src="js/fromExternalSources/ColorThief.js">
   </script> -->
 </body>

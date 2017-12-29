@@ -1,6 +1,7 @@
 app.controller('UploadController',['$scope',function($scope){
   // var colorThief = new ColorThief();
-  $scope.imageSrc="";
+  $scope.imageSrc="images/1.jpg";
+  
   $scope.$on("fileProgress",function(e, progress){
     $scope.progress=progress.loaded/progress.total;
   });
