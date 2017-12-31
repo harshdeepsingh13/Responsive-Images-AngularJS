@@ -8,4 +8,5 @@ app.controller('UploadController',['$scope',function($scope){
   // var img = document.getElementById('myImage');
   // colorThief.getColor(img);
   // console.log("color thief" + colorThief);
+
 }]);

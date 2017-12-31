@@ -12,6 +12,8 @@
 </script>
 
 <script src="js/controllers/BorderController.js"> </script>
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
 
 <!--Import Google Icon Font-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,10 +35,12 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
      <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="node_modules/material-components-web/dist/material-components-web.css">
 
 
 </head>
-<body ng-app="myApp" ng-controller="MainController" id = "myBody" style="background:#0a9eb5">
+<body ng-app="myApp" ng-controller="MainController" id = "myBody" style="background:#92e7f4">
   <p id='para'> </p>
   <!-- <script> document.getElementById('para').innerHTML='hey';</script> -->
   <h1> My Responsive Images </h1>
@@ -44,8 +48,11 @@
     <form>
       <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc" id="uploadFile">
     </form>
+      <button id= "myZoomInButton" class="mdc-button" ng-click="zoomIn()">Zoom in </button>
     <!-- <script src="js/fromExternalSources/ColorThief.js"> </script> -->
+      <center>
     <img id="myImage" ng-src="{{imageSrc}}" class="image" >
+      </center>
 
     <script>
     console.log("hey");
@@ -69,6 +76,12 @@
       console.log("color thief");
       document.getElementById('para').innerHTML="color Thief";
     </script> -->
+      <!--<div>
+          <center>
+          <br>
+          <button id= "myZoomInButton" class="mdc-button">Zoom in </button>
+          </center>
+      </div>-->
   </div>
   <div id="loading" class="loader">
 
