@@ -36,8 +36,7 @@
 
      <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet"
-          href="node_modules/material-components-web/dist/material-components-web.css">
-
+          href="node_modules/material-components-web/dist/material-components-web.css">e
 
 </head>
 <body ng-app="myApp" ng-controller="MainController" id = "myBody" style="background:#92e7f4">
@@ -46,12 +45,13 @@
   <h1> My Responsive Images </h1>
   <div id = "myDiv" ng-controller="UploadController">
     <form>
-      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc" id="uploadFile">
+      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc" id="uploadFile" ng-click="resetImageWidth()">
     </form>
-      <button id= "myZoomInButton" class="mdc-button" ng-click="zoomIn()">Zoom in </button>
+      <button id= "myZoomInButton" class="mdc-button" ng-click="zoomIn()"><img src="images/ic_zoom_in_black_48dp.png" width="15" height="15">Zoom in </button>
+      <button id= "myZoomOutButton" class="mdc-button" ng-click="zoomOut()"><img src="images/ic_zoom_out_black_48dp.png" width="15" height="15">Zoom out </button>
     <!-- <script src="js/fromExternalSources/ColorThief.js"> </script> -->
       <center>
-    <img id="myImage" ng-src="{{imageSrc}}" class="image" >
+    <img id="myImage" ng-src="{{imageSrc}}" class="image">
       </center>
 
     <script>

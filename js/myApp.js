@@ -10,7 +10,7 @@ function getDominantColor()
     console.log(color);
     // document.getElementById("myImage").style.border="10px solid";
     document.getElementById("myBody").style.background=rgbToHex(color[0],color[1],color[2],50.00);
-    
+
 
 
     console.log(document.getElementById("myBody").style.background);
@@ -23,5 +23,18 @@ function getDominantColor()
     var R=r+amt, G=g+amt, B=b+amt;
     return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
   }
+};
+
+/*
+function zoomInMouseMove(event)
+{
+  var zoomer = event.currentTarget;
+
+  event.offsetX ? offsetX = event.offsetX : offsetX = event.touches[0].pageX;
+  event.offsetY ? offsetY = event.offsetY : offsetX = event.touches[0].pageX;
+  x=offsetX/zoomer.offsetWidth*100;
+  y=offsetY/zoomer.offsetHeight*100;
+  zoomer.style.backgroundPosition = x+'% '+y+'%';
 }
+*/
 
